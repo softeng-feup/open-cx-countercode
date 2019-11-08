@@ -34,7 +34,7 @@ Thank you!
 
 An important piece of data for a conference is knowing the attendance and time spent in any given talk.
 This information benefits everyone involved, be it organizers, speakers or attendees through data collection.
-Using infrared sensors and a reflective material, seat occupancy data can be collected with acceptable precision. For each seat, an attendee blocks line of sight between the sensor and the chair, showing he is indeed occupying it.
+Using two motion sensors on each door, lecture attendance data can be collected with acceptable precision. For each person that walks through the door, the motion sensors can determine wether they are entering or leaving the room giving us a rough estimate of how many people are in the room at each given time.
 
 
 ---
