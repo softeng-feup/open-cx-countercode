@@ -71,10 +71,10 @@ Normal Flow:
   5. Find yourself a seat and enjoy the lecture.
 
 Alternative Flows and Exceptions:
-	 1. Access the website.
-		2. Search for the lecture you are interested in.
-		3. Check the room attendance.
-		4. If the room is full, search for another lecture that isn’t.
+  1. Access the website.
+  2. Search for the lecture you are interested in.
+  3. Check the room attendance.
+  4. If the room is full, search for another lecture that isn’t.
   
  
 **Get previous conference or speaker analytics**
@@ -87,8 +87,8 @@ Preconditions and Postconditions: Carry a portable device with access to the Int
 
 Normal Flow: 	
   1. Access the website.
-		2. Search for the speaker and conference you are interested in.
-		3. Check the feedback.
+  2. Search for the speaker and conference you are interested in.
+  3. Check the feedback.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -103,8 +103,8 @@ Preconditions and Postconditions: Carry a portable device with access to the Int
 
 Normal Flow: 	
   1. Access the website.
-		2. Search for the lectures in which you will talk.
-		3. Check the feedback.
+  2. Search for the lectures in which you will talk.
+  3. Check the feedback.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -140,8 +140,8 @@ Preconditions and Postconditions: Carry a portable device with access to the Int
 
 Normal Flow: 	
   1. Access the website.
-		2. Search for the lecture you are interested in.
-		3. Check the room where the lecture is being held.
+  2. Search for the lecture you are interested in.
+  3. Check the room where the lecture is being held.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -156,8 +156,8 @@ Preconditions and Postconditions: The lectures must have ended already and the S
 
 Normal Flow: 	
   1. Access the website.
-		2. Search for the lecture you participated in.
-		3. Write your opinion regarding the lecture and its preparation.
+  2. Search for the lecture you participated in.
+  3. Write your opinion regarding the lecture and its preparation.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -171,8 +171,8 @@ Preconditions and Postconditions: The Speaker must have had at least one talk in
 
 Normal Flow: 	
   1. Access the website.
-		2. Search for the speaker you are interested in.
-		3. Check its popularity.
+  2. Search for the speaker you are interested in.
+  3. Check its popularity.
 
 Alternative Flows and Exceptions: There are none.
 
