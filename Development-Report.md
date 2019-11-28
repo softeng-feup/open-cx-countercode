@@ -56,7 +56,7 @@ Sensor unit outputs a voltage based on detection distance. This voltage change i
 ### Use case diagram 
 
 
-![GitHub Logo](Diagram.png)
+![Use Case Diagram](Diagram.png)
 
 **Check room attendance**
 
@@ -189,7 +189,7 @@ Alternative Flows and Exceptions: There are none.
 
 ### Domain model
 
-To better understand the context of the software system, it is very useful to have a simple UML class diagram with all the key concepts (names, attributes) and relationships involved of the problem domain addressed by your module.
+![UML Diagram](DomainModel.png)
 
 ---
 
