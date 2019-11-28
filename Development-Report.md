@@ -44,11 +44,14 @@ Have you ever rushed to a lecture just to find out there are no more seats avail
 ---
 ## Requirements
 
-Non functional:
-  First Iteration:
-    IR camera and reflective dots - Regarding this method, we are looking to get a precise count of seats that maybe occupied or whose dot is obstructed. 
-  Second Iteration: 
-    Arduino camera - With an Arduino camera we intend to scan the room for faces in order to get a count of seats that are occupied, with this method we are limited by camera resolution.
+[Non-functional]
+Document changes in conference space occupancy and process them into useful metric for all participants.
+
+[Functional]
+Distance measuring sensor unit (Sharp 2Y0A21 F 19)
+Raspberry PI B 3+
+
+Sensor unit outputs a voltage based on detection distance. This voltage change is processed by the raspberry pi and is correlated to a person entering the conference space.
 
 ### Use case diagram 
 
