@@ -119,15 +119,15 @@ Preconditions and Postconditions: In order to check the room attendance, the lec
 
 Normal Flow: 	
   1. Access the website.
-		2. Search for the lecture you are interested in.
-		3. Check the room attendance.
-		4. Check the attendees feedback regarding the conference.
+  2. Search for the lecture you are interested in.
+  3. Check the room attendance.
+  4. Check the attendees feedback regarding the conference.
 
 Alternative Flows and Exceptions:
   1. Access the website.
-		2. Search for the lecture you are interested in.
-		3. Check the attendees feedback regarding the conference.
-		4. Check the room attendance.
+  2. Search for the lecture you are interested in.
+  3. Check the attendees feedback regarding the conference.
+  4. Check the room attendance.
   
 
 **Check lecture location**
