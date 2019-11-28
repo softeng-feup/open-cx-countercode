@@ -52,18 +52,133 @@ Non functional:
 
 ### Use case diagram 
 
-Create a use-case diagram in UML with all high-level use cases possibly addressed by your module.
 
-Give each use case a concise, results-oriented name. Use cases should reflect the tasks the user needs to be able to accomplish using the system. Include an action verb and a noun. 
+![GitHub Logo](Diagram.png)
 
-Briefly describe each use case mentioning the following:
+**Check room attendance**
 
-* **Actor**. Name only the actor that will be initiating this use case, i.e. a person or other entity external to the software system being specified who interacts with the system and performs use cases to accomplish tasks. 
-* **Description**. Provide a brief description of the reason for and outcome of this use case, or a high-level description of the sequence of actions and the outcome of executing the use case. 
-* **Preconditions and Postconditions**. Include any activities that must take place, or any conditions that must be true, before the use case can be started (preconditions) and postconditions. Describe also the state of the system at the conclusion of the use case execution (postconditions). 
+Actor: User, Speaker and Organizer
 
-* **Normal Flow**. Provide a detailed description of the user actions and system responses that will take place during execution of the use case under normal, expected conditions. This dialog sequence will ultimately lead to accomplishing the goal stated in the use case name and description. This is best done as a numbered list of actions performed by the actor, alternating with responses provided by the system. 
-* **Alternative Flows and Exceptions**. Document other, legitimate usage scenarios that can take place within this use case, stating any differences in the sequence of steps that take place. In addition, describe any anticipated error conditions that could occur during execution of the use case, and define how the system is to respond to those conditions. 
+Description: Providing information relative to the number of people that are attending or attended a lecture.
+
+Preconditions and Postconditions: Carry a portable device with access to the Internet.
+
+Normal Flow: 	
+  1. Access the website.
+		2. Search for the lecture you are interested in.
+		3. Check the room attendance
+		4. Head to the room displayed on the website.
+		5. Find yourself a seat and enjoy the lecture.
+
+Alternative Flows and Exceptions:
+	 1. Access the website.
+		2. Search for the lecture you are interested in.
+		3. Check the room attendance.
+		4. If the room is full, search for another lecture that isn’t.
+  
+ 
+**Get previous conference or speaker analytics**
+
+Actor: User and Organizer
+
+Description: Providing information relative to a conference or speaker.
+
+Preconditions and Postconditions: Carry a portable device with access to the Internet.
+
+Normal Flow: 	
+  1. Access the website.
+		2. Search for the speaker and conference you are interested in.
+		3. Check the feedback.
+
+Alternative Flows and Exceptions: There are none.
+
+
+**Check previous lectures statistics**
+
+Actor: Speaker
+
+Description: Providing feedback relative to a talk held by the speaker.
+
+Preconditions and Postconditions: Carry a portable device with access to the Internet.
+
+Normal Flow: 	
+  1. Access the website.
+		2. Search for the lectures in which you will talk.
+		3. Check the feedback.
+
+Alternative Flows and Exceptions: There are none.
+
+
+**Analyse conference interest**
+
+Actor: Organizer
+
+Description: Providing information relative to the number of people that are attending or attended a lecture and their feedback.
+
+Preconditions and Postconditions: In order to check the room attendance, the lecture must started or ended. The overall feedback is only available after people posted their opinion. Also the organizer needs to be able to access the internet.
+
+Normal Flow: 	
+  1. Access the website.
+		2. Search for the lecture you are interested in.
+		3. Check the room attendance.
+		4. Check the attendees feedback regarding the conference.
+
+Alternative Flows and Exceptions:
+  1. Access the website.
+		2. Search for the lecture you are interested in.
+		3. Check the attendees feedback regarding the conference.
+		4. Check the room attendance.
+  
+
+**Check lecture location**
+
+Actor: User and Speaker
+
+Description: Providing information relative to where the lecture will take place.
+
+Preconditions and Postconditions: Carry a portable device with access to the Internet.
+
+Normal Flow: 	
+  1. Access the website.
+		2. Search for the lecture you are interested in.
+		3. Check the room where the lecture is being held.
+
+Alternative Flows and Exceptions: There are none.
+
+
+**Provide feedback about the lecture and its preparation**
+
+Actor: Speaker
+
+Description: Providing feedback relative to the preparation thelectures itself the Speaker participated in.
+
+Preconditions and Postconditions: The lectures must have ended already and the Speaker needs to be able to access the Internet.
+
+Normal Flow: 	
+  1. Access the website.
+		2. Search for the lecture you participated in.
+		3. Write your opinion regarding the lecture and its preparation.
+
+Alternative Flows and Exceptions: There are none.
+
+
+**Estimate a certain speaker’s popularity**
+
+Actor: Organizer
+
+Description: Give a “rating” to each speaker based on his reviews on other conferences.
+Preconditions and Postconditions: The Speaker must have had at least one talk in other conference and must have at least one review.
+
+Normal Flow: 	
+  1. Access the website.
+		2. Search for the speaker you are interested in.
+		3. Check its popularity.
+
+Alternative Flows and Exceptions: There are none.
+
+
+
+
 
 ### User stories
 This section will contain the requirements of the product described as **user stories**, organized in a global **user story map** with **user roles** or **themes**.
