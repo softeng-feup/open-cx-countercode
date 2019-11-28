@@ -65,10 +65,10 @@ Preconditions and Postconditions: Carry a portable device with access to the Int
 
 Normal Flow: 	
   1. Access the website.
-		2. Search for the lecture you are interested in.
-		3. Check the room attendance
-		4. Head to the room displayed on the website.
-		5. Find yourself a seat and enjoy the lecture.
+  2. Search for the lecture you are interested in.
+  3. Check the room attendance
+  4. Head to the room displayed on the website.
+  5. Find yourself a seat and enjoy the lecture.
 
 Alternative Flows and Exceptions:
 	 1. Access the website.
