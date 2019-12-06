@@ -194,6 +194,22 @@ Alternative Flows and Exceptions: There are none.
 ---
 
 ## Architecture and Design
+
+Sensor connected to RaspberryPi running python
+Web server running website and database
+Website: information displayed and some features: feedback form, add a talk, check room attendance, register speakers accounts.
+RaspberryPi: Processes entrances and sends the information to the webserver.
+
+   In order to calculate the room attendance, a RaspberryPi running a python script is used to determine if a person entered or left the room using two distance measuring sensors and the sequence by which they are triggered.
+
+
+
+
+
+
+
+
+
 The architecture of a software system encompasses the set of key decisions about its overall organization. 
 
 A well written architecture document is brief but reduces the amount of time it takes new programmers to a project to understand the code to feel able to make modifications and enhancements.
