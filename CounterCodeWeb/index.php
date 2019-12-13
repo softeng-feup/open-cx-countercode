@@ -7,12 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>ESOF - Talks</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
+
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="node_modules/jquery-bar-rating/dist/themes/css-stars.css">
-  <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/style.css">
@@ -200,7 +198,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" data-toggle="collapse" href="pages/speakers.html" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Speakers</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
@@ -253,20 +251,6 @@
               </div>
             </li>
           </ul>
-          <div class="sidebar-progress">
-            <p>Total Sales</p>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p>50 Items sold</p>
-          </div>
-          <div class="sidebar-progress">
-            <p>Customer Target</p>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p>200 Items sold</p>
-          </div>
         </nav>
         <!-- partial -->
         <div class="content-wrapper">
@@ -295,7 +279,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Room Attendance</h4>
-                  <canvas id="sales-chart"></canvas>
+                  <canvas id="sales-chart" height="200"></canvas>
                 </div>
               </div>
             </div>
@@ -422,21 +406,31 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/misc.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
-  <!-- End custom js for this page-->
-</body>
 
+  <!-- Plugin js for this page-->
+
+</body>
 </html>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js">
+new Chart(document.getElementById("sales-chart"), {
+  type: 'line',
+  data: {
+    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    datasets: [ { 
+        data: [6,3,2,2,7,26,82,172,312,433],
+        label: "B301",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'People in the room'
+    }
+  }
+});
+</script>
