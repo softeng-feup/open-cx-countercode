@@ -203,16 +203,10 @@
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-                </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/icons/font-awesome.html">
-                <span class="menu-title">Locations</span>
+                <span class="menu-title">Rooms</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
@@ -222,33 +216,11 @@
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/charts/chartjs.html">
-                <span class="menu-title">Talk Charts</span>
+            <li id="admin_page" class="nav-item">
+              <a class="nav-link" href="pages/samples/login.html">
+                <span class="menu-title">Admin Page</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/bootstrap-table.html">
-                <span class="menu-title">Table</span>
-                <i class="mdi mdi-table-large menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <span class="menu-title">Sample Pages</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-lock menu-icon"></i>
-              </a>
-              <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                </ul>
-              </div>
             </li>
           </ul>
         </nav>
@@ -424,7 +396,7 @@
     new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
-                labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+                labels: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 48, 50, 52, 54, 56, 58, 60],
                 datasets: [{ 
                     data: [0, 20, 40, 60, 80, 107, 113, 117, 122, 126, 129, 131, 133, 135, 135, 136, 136, 136, 135, 135, 135, 134, 134, 135, 135, 136, 138, 139, 141, 143],
                     label: "B301",
