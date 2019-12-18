@@ -279,7 +279,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Room Attendance</h4>
-                  <canvas id="sales-chart" height="200"></canvas>
+                  <canvas id="line-chart" height="200"></canvas>
                 </div>
               </div>
             </div>
@@ -413,24 +413,38 @@
 </html>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js">
-new Chart(document.getElementById("sales-chart"), {
-  type: 'line',
-  data: {
-    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-    datasets: [ { 
-        data: [6,3,2,2,7,26,82,172,312,433],
-        label: "B301",
-        borderColor: "#c45850",
-        fill: false
-      }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'People in the room'
+<style>
+    #chart {
+        max-width: 500px;
     }
-  }
-});
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+    new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+                labels: [0,10,20,30,40,50,60,70,80,90],
+                datasets: [{ 
+                    data: [10,20,80,90,90,102,102,90,20,0],
+                    label: "B301",
+                    borderColor: "#3e95cd",
+                    fill: false
+                },
+                { 
+                    data: [0,0,20,30,30,34,44,50,20,0],
+                    label: "B302",
+                    borderColor: "#3fb26d",
+                    fill: false
+                }
+            ]
+        },
+        options: {
+            title: {
+            display: true,
+            text: 'People in the rooms'
+            }
+        }
+    });
 </script>
+
