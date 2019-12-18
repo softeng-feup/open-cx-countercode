@@ -22,8 +22,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.jpg" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo.jpg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="index.php"><img src="images/logo.jpg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo.jpg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <div class="search-field ml-4 d-none d-md-block">
@@ -424,25 +424,50 @@
     new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
-                labels: [0,10,20,30,40,50,60,70,80,90],
+                labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
                 datasets: [{ 
-                    data: [10,20,80,90,90,102,102,90,20,0],
+                    data: [0, 20, 40, 60, 80, 107, 113, 117, 122, 126, 129, 131, 133, 135, 135, 136, 136, 136, 135, 135, 135, 134, 134, 135, 135, 136, 138, 139, 141, 143],
                     label: "B301",
                     borderColor: "#3e95cd",
                     fill: false
-                },
-                { 
-                    data: [0,0,20,30,30,34,44,50,20,0],
-                    label: "B302",
-                    borderColor: "#3fb26d",
-                    fill: false
                 }
+                // { 
+                //     data: [0,0,20,30,30,34,44,50,20,0],
+                //     label: "B302",
+                //     borderColor: "#3fb26d",
+                //     fill: false
+                // }
             ]
         },
         options: {
             title: {
             display: true,
             text: 'People in the rooms'
+            }
+        }
+    });
+
+
+    new Chart(document.getElementById("satisfaction-chart"), {
+        type: 'bar',
+        data: {
+                labels: [1,1.5,2,2.5,3,3.5,4,4.5,5],
+                datasets: [{ 
+                    data: [1,0,0,0,0,4,10,40,10],
+                    label: "Git - The basics",
+                    backgroundColor: "#3e95cd",
+                },
+                { 
+                    data: [5,4,1,0,0,0,6,55,15],
+                    label: "Polyrhythms and math",
+                    backgroundColor: "#3fb26d",
+                }
+            ]
+        },
+        options: {
+            title: {
+            display: true,
+            text: 'Talk ratings'
             }
         }
     });
