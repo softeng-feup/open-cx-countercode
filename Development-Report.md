@@ -202,7 +202,7 @@ RaspberryPi: Processes entrances and sends the information to the webserver.
 
    In order to calculate the room attendance, a RaspberryPi running a python script is used to determine if a person entered or left the room using two distance measuring sensors and the sequence by which they are triggered.
    As a way of adding the entries and exits of the several lectures, the RaspberryPi sends a HTTP request to the server and inserts the formated data into the database.
-   ... (queries da base de dados e os forms online no site)
+   The database provides the information needed for display in the website.
    With all this data available in the website, every atendee, speaker or organizer can check it with their phone.
 
 
