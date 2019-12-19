@@ -125,7 +125,7 @@ function try_insert_talk($email, $roomID, $title, $date_start, $date_end) {
             $title,
             $date_start,
             $date_end,
-        );
+        ));
         return 'OK';
     } catch (PDOException $e) {
         return "FAIL";

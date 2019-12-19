@@ -3,7 +3,7 @@
 	<div class="background" id="homebackground">
         <?php include_once('templates/navbar.php'); ?>
         <div id="login_container">
-            <form id="login_form" action="admin_page.php">
+            <form id="login_form" action="login.php">
                 <label for="username">Email<br>
                     <input type="email" id="email">
                 </label>

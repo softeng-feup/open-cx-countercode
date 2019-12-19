@@ -63,9 +63,9 @@ $talks = try_get_all_talks();
                     </td>
                     <td>
                         <?php if($talk_info['date_end'] < $now) {
-                            echo $rating;
+                            echo 'Rating:  ',$rating;
                         } else {
-                            echo 'In the fucking future';
+                            echo 'Scheduled';
                         } ?>
                     </td>
                     <td>
