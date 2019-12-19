@@ -212,20 +212,14 @@ RaspberryPi: Processes entrances and sends the information to the webserver.
 ### Physical architecture
 ![UML Physical](physical.png)
 ### Prototype
-To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.
-
-In this subsection please describe in more detail which, and how, user(s) story(ies) were implemented.
-
+  Check the room attendance was the user story chosen to demonstrate in the prototype. Every person that enters or leaves the room, where the selected lecture is being held, will trigger the distance measuring sensors.
+  The sequence which the sensors are activated will be processed by the RaspberryPi, running a python script.
+  The RaspberryPi makes an HTTP request to add the newly collected data to the database in the server. 
+  The website then displays the information by quering the database.
+  Any user, speaker or organiser can, at any given time, check the website for this information.
 ---
 
 ## Implementation
-During implementation, while not necessary, it 
-
-It might be also useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. 
-
-Since the code should speak by itself, try to keep this section as short and simple as possible.
-
-Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
 
 ---
 ## Test
@@ -250,14 +244,5 @@ For the purpose of ESOF, we will use a very simple approach, just to manage feat
 
 ## Project management
 
-Software project management is an art and science of planning and leading software projects, in which software projects are planned, implemented, monitored and controlled.
+  * [Trello.com](https://trello.com/b/TEjaBTpK/c-alfred)
 
-In the context of ESOF, we expect that each team adopts a project management tool capable of registering tasks, assign tasks to people, add estimations to tasks, monitor tasks progress, and therefore being able to track their projects.
-
-Example of tools to do this are:
-  * [Trello.com](https://trello.com)
-  * [Github Projects](https://github.com/features/project-management/com)
-  * [Pivotal Tracker](https://www.pivotaltracker.com)
-  * [Jira](https://www.atlassian.com/software/jira)
-
-We recommend to use the simplest tool that can possibly work for the team.
