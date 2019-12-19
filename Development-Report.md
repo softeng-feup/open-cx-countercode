@@ -208,7 +208,7 @@ RaspberryPi: Processes entrances and sends the information to the webserver.
 
 
 ### Logical architecture
-![UML Logical](Logical.png)
+![UML Logical](logical.png)
 
 ### Physical architecture
 The goal of this subsection is to document the high-level physical structure of the software system (machines, connections, software components installed, and their dependencies) using UML deployment diagrams or component diagrams (separate or integrated), showing the physical structure of the system.
