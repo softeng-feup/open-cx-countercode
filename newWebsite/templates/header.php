@@ -11,7 +11,7 @@
 
 		<link rel="icon" href="favicon.ico">
 		<link rel="shortcut icon" href="favicon.ico">
-		<script src="script.js" defer></script>
+		<!-- <script src="script.js" defer></script> -->
 	</head>
 
 	<body>

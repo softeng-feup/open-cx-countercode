@@ -1,6 +1,6 @@
 <?php include_once('templates/header.php'); ?>
 
-	<div class="background" id="homebackground">
+	<div class="background" id="homebackground3">
         <?php include_once('templates/navbar.php'); ?>
         <div id="flex_container">
             <?php include_once('templates/sidebar.php'); ?>
