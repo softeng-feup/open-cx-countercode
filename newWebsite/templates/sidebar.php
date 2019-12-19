@@ -10,20 +10,27 @@
             <span class="menu-title">Speakers</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="pages/icons/font-awesome.html">
-            <span class="menu-title">Rooms</span>
-        </a>
+    <li>
+        <div id="card_body">
+            <h4 class="font-weight-normal mb-3">Weekly Visitors</h4>
+            <h2 class="font-weight-normal mb-5">123456</h2>
+            <p class="card-text">Attendance: 93%</p>
+        </div>
+
+        <div id="card_body">
+            <h4 class="font-weight-normal mb-3">Today's Visitors</h4>
+            <h2 class="font-weight-normal mb-5">54678</h2>
+            <p class="card-text">Attendance: 78%</p>
+        </div>
     </li>
+    </ul>
+</nav>
+
+
+
+<!-- 
     <li class="nav-item">
         <a class="nav-link" href="pages/forms/basic_elements.html">
             <span class="menu-title">Rate a talk</span>
         </a>
-    </li>
-    <li id="admin_page" class="nav-item">
-        <a class="nav-link" href="../CounterCodeWeb/pages/samples/login.html">
-            <span class="menu-title">Admin Page</span>
-        </a>
-    </li>
-    </ul>
-</nav>
+    </li> -->

@@ -145,14 +145,36 @@ color: white;
 }
 
 #card_body {
-    margin-top: 2em;
-    border: solid;
-    border-color: #3e508a;
-    background-color: #f0f0f0;
-    width: 20%;
-    padding: 0em 2em;
+    margin-top: 75%;
+    color: #fafafa;
+    width: 90%;
 }
 
+#login_container {
+    width: 50%;
+    height: 40%;
+    min-height: 15em;
+    margin: 10% 25%;
+    background-color: #efefef;
+    border: solid;
+    border-color: #3e508a;
+    border-radius: 5px;
+}
+
+#login_form {
+    text-align: center;
+    padding-top: 5%;
+}
+
+#login_form input {
+    margin: 1em 0;
+}
+
+#table img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
 
 /* When the screen is less than 720px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 720px) {
