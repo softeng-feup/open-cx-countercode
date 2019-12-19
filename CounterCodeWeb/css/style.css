@@ -78,7 +78,6 @@ color: white;
 
 /* Form realted css */
 #form{
-    font-family: 'Open Sans', sans-serif;
     margin: 5% 5%; 
     width:30em;
     padding:2em;
@@ -90,7 +89,7 @@ color: white;
 
 #form h1 {
     font-weight: bold;
-    color: #e27d60;
+    color: #3e508a;
     text-align: center;
 }
 
@@ -174,18 +173,30 @@ color: white;
     margin: 10% 0;
 }
 
+#table tr{
+    margin: 1em 0;
+}
+
 #table img {
     height: 40px;
     width: 40px;
     border-radius: 20px;
+    float: left;
 }
+
+#table td {
+    text-align: center;
+    margin: 1em 5em;
+}
+
 
 #talk_redirect {
     width: 100%;
     color: transparent;
-    background-color: red;
+    background-color: #4CAF50;
     border: none;
     margin:0;
+    padding: 1em;
 }
 
 #talk_info {
@@ -245,7 +256,7 @@ color: white;
     }
     #form h1 {
         font-weight: bold;
-        color: #e27d60;
+        color: #3e508a;
     }
     
     #form label{

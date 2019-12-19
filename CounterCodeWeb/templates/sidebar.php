@@ -1,12 +1,12 @@
 <nav id="sidebar">
     <ul id="nav">
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
             <span class="menu-title">Talks</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link"  href="pages/speakers.html" >
+        <a class="nav-link"  href="templates/speakers.php" >
             <span class="menu-title">Speakers</span>
         </a>
     </li>

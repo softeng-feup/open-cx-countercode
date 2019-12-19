@@ -1,11 +1,13 @@
 <?php
-	include_once('database/connection.php');
+	include_once('database/talk_q.php');
+	
+	
 	$talk_id = $_POST['talk_id'];
 	$talk_info = try_get_talk_info_by_id($talk_id);
-?>
+	$now = time();
 
-<?php include_once('templates/header.php'); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	include_once('templates/header.php');
+?>
 
 	<div class="background" id="homebackground3">
 		<?php include_once('templates/navbar.php'); ?>
@@ -20,13 +22,22 @@
 				<canvas id="satisfaction-chart" width="800" height="400"></canvas>
 			</div>
 		</div>
+		<?php if($talk_info['date_end'] < $now) {
+				?> 	<div id="rate_form">
+						<form id="form">
+							<label for="talk_rating"> Please rate this talk:
+								<input type="number" id="talk_rating" step="1" min="1" max="5">
+							</label>
+						</form>
+					</div>
+		<?php } ?>
 	</div>
 
 <?php include_once('templates/footer.php'); ?>
 
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
 
 	function encode_for_ajax(data) {
@@ -34,25 +45,32 @@
 		return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
 		}).join('&')
 	}
-	function draw_talk_graph(talk_data) {
-		console.log(talk_data);
-		let start_time = talk_data[0]['timestamp'];
+
+	function draw_talk_attendance_graph(talk_attendance, talk_info) {
+
+		let talk_duration = (talk_info['date_end'] - talk_info['date_start']) / 60;
+		let start_time = talk_info['date_start'];
+
+		let graph_data = [];
 		let time_minutes = [];
+		let time_step = 1;
+		for (let i = 0; i <= talk_duration; i += time_step) {
+			time_minutes.push(i);
+		}
+
 		let people_count = [];
 		let people_counter = 0;
-		talk_data.forEach(point => {
-			time_minutes.push(point['timestamp'] - start_time);
+		talk_attendance.forEach(point => {
 			people_counter += (point['is_entry'] == '1') ? 1 : -1;
-			people_count.push(people_counter);
+			graph_data.push({x: point['timestamp'] - start_time, y: people_counter});
 		});
-		console.log(time_minutes);
-		console.log(people_count);
+
 		new Chart(document.getElementById("line-chart"), {
 			type: 'line',
 			data: {
 					labels: time_minutes,
 					datasets: [{ 
-						data: people_count,
+						data: graph_data,
 						label: "B301",
 						borderColor: "#3e95cd",
 						fill: false
@@ -63,11 +81,86 @@
 				title: {
 				display: true,
 				text: 'Room atendance'
-				}
+				},
+				scales: {
+            		xAxes: [{
+                		display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Value'
+						},
+						ticks: {
+							min: 0,
+							max: 100,
+
+							// forces step size to be 5 units
+							stepSize: 5 // <----- This prop sets the stepSize
+						}
+					}],
+					yAxes: [{
+                		ticks: {
+                    		suggestedMin: 0,
+							stepSize: 2
+                		}
+            		}]
+       			}
 			}
 		});
 	}
+
+	function draw_talk_ratings_graph(talk_ratings, talk_info) {
+
+		let graph_data = [];
+
+		for (let index = 0; index < 5; index++) {
+			graph_data.push(talk_ratings[index]['count_rat']);
+		}
+
+
+		new Chart(document.getElementById("satisfaction-chart"), {
+			type: 'bar',
+			data: {
+					labels: [1, 2, 3, 4, 5],
+					datasets: [{ 
+						data: graph_data,
+						label: "Git - The basics",
+						backgroundColor: "#3e95cd",
+					}
+				]
+			},
+			options: {
+				title: {
+				display: true,
+				text: 'Room ratings'
+				},
+				scales: {
+            		xAxes: [{
+                		display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Rating'
+						},
+						ticks: {
+							min: 1,
+							max: 5,
+
+							// forces step size to be 5 units
+							stepSize: 1 // <----- This prop sets the stepSize
+						}
+					}],
+					yAxes: [{
+						ticks: {
+							min: 0,
+							stepSize: 1 // <----- This prop sets the stepSize
+						}
+            		}]
+       			}
+			}
+		});
+	}
+
 	function request_talk_data(talk_id) {
+
 		if(talk_id !== null) {
 			var request = new XMLHttpRequest();
 			request.onreadystatechange = function () { process_talk_data(request); };
@@ -82,43 +175,20 @@
 			let requestData = null;
 			try {
 				requestData = JSON.parse(request.responseText);
-				//console.log(requestData);
+				console.log(requestData);
 			} catch (error) {
 				console.log('Failed to parse request JSON data.');
 			}
 			if(requestData.success) {
-				draw_talk_graph(requestData.talk_data);
+				draw_talk_attendance_graph(requestData.talk_attendance, requestData.talk_info);
+				draw_talk_ratings_graph(requestData.talk_ratings, requestData.talk_info);
 			}
 			else {
 				console.log("FAIL");
 			}
 		}
 	}
+
 	request_talk_data(<?php echo $talk_id; ?>);
 	
-	// TODO: Add talk ratings
-
-	new Chart(document.getElementById("satisfaction-chart"), {
-		type: 'bar',
-		data: {
-				labels: [1,1.5,2,2.5,3,3.5,4,4.5,5],
-				datasets: [{ 
-					data: [1,0,0,0,0,4,10,40,10],
-					label: "Git - The basics",
-					backgroundColor: "#3e95cd",
-				},
-				{ 
-					data: [5,4,1,0,0,0,6,55,15],
-					label: "Polyrhythms and math",
-					backgroundColor: "#3fb26d",
-				}
-			]
-		},
-		options: {
-			title: {
-			display: true,
-			text: 'Talk ratings'
-			}
-		}
-	});
 </script>

@@ -1,8 +1,8 @@
-<?php include_once('database/connection.php'); ?>
-
-
 <?php
-    $talks = try_get_all_talks();
+
+include_once('database/talk_q.php');
+$talks = try_get_all_talks();
+
 ?>
 
 <div class="card-body">
@@ -22,24 +22,35 @@
             <th>
             Date
             </th>
+            <th>
+            Duration
+            </th>
+            <th>
+            Status
+            </th>
+            <th>
+            Go to talk
+            </th>
         </tr>
         </thead>
         <?php
         foreach ($talks as $talk) {
             $talk_id = $talk['talkID']; 
-            $talk_info = try_get_talk_info_by_id($talk_id); 
+            $talk_info = try_get_talk_info_by_id($talk_id);
+            $rating = try_get_talk_avg_rating_by_id($talk_id);
+        	$now = time();
+            $talk_duration = ($talk_info['date_end'] - $talk_info['date_start'])/3600;
             ?>
             
             <tbody>
-            <form method="POST" action="talk_charts.php">
                 <tr>
-                    <input type="submit" id="talk_redirect" name="talk_id" value="<?php echo $talk_id ?>">
-                    <td class="py-1">
-                    <img src="faces/face1.jpg" class="mr-2" alt="image">
-                    <?php echo $talk_info['name']; ?>
+                    
+                    <td>
+                        <img src="faces/face1.jpg" class="mr-2" alt="image">
+                        <?php echo $talk_info['name']; ?>
                     </td>
                     <td>
-                    <?php echo $talk_info['title']; ?>
+                        <?php echo $talk_info['title']; ?>
                     </td>
                     <td>
                         <?php echo $talk_info['roomID']; ?>
@@ -47,7 +58,21 @@
                     <td>
                         <?php echo date('d-m-Y',$talk_info['date_start']); ?>
                     </td>
-                    </input>
+                    <td>
+                        <?php echo $talk_duration,' h'; ?>
+                    </td>
+                    <td>
+                        <?php if($talk_info['date_end'] < $now) {
+                            echo $rating;
+                        } else {
+                            echo 'In the fucking future';
+                        } ?>
+                    </td>
+                    <td>
+                    <form method="POST" action="talk_charts.php">
+                    <input type="submit" id="talk_redirect" name="talk_id" value="<?php echo $talk_id ?>">
+                    </form>
+                    </td>
                 </tr>
         <?php } ?>
         </form>

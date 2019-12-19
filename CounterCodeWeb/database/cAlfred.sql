@@ -37,6 +37,12 @@ CREATE TABLE TalkAttendance (
     FOREIGN KEY (talkID) REFERENCES Talk(talkID)
 );
 
+CREATE TABLE TalkRating (
+    talkID INTEGER NOT NULL,
+    rating INTEGER DEFAULT NULL,
+    CHECK(rating BETWEEN 1 AND 5 OR rating is NULL),
+    FOREIGN KEY (talkID) REFERENCES Talk(talkID)
+);
 
 INSERT INTO User VALUES ("admin@esof.esof", "Admin", "$2y$10$oeuPFBhKkgw.sw7sP9L4RuuokgTgPeN7mF.s.ydriZue1lt1d10aa", 1);
 INSERT INTO User VALUES ("speaker1@esof.esof", "John Doe", "$2y$10$cRW6f9o6wPn8uipAfks8v.AyPImNDWtw5KW8oGehi/7f07SoYnTSC", 0);
@@ -50,8 +56,19 @@ INSERT INTO Room VALUES ("B003", "Edificio B Anfiteatro 003", 184);
 
 INSERT INTO Talk VALUES (NULL, "speaker1@esof.esof", "B001","Git - The basics", 1576836000, 1576839600);
 INSERT INTO Talk VALUES (NULL, "speaker2@esof.esof", "B002","Polyrhythms and math", 1576846000, 1576849600);
-INSERT INTO Talk VALUES (NULL, "speaker3@esof.esof", "B002","Marine biology and python", 1576856000, 157659600);
+INSERT INTO Talk VALUES (NULL, "speaker3@esof.esof", "B002","Marine biology and python", 1576690200, 1576695600);
 INSERT INTO Talk VALUES (NULL, "speaker4@esof.esof", "B002","How to sleep better", 1576866000, 1576869600);
+
+INSERT INTO TalkRating VALUES (1, 5);
+INSERT INTO TalkRating VALUES (1, 4);
+INSERT INTO TalkRating VALUES (1, 4);
+INSERT INTO TalkRating VALUES (1, 3);
+INSERT INTO TalkRating VALUES (1, 2);
+INSERT INTO TalkRating VALUES (1, 2);
+INSERT INTO TalkRating VALUES (1, 1);
+INSERT INTO TalkRating VALUES (1, 1);
+INSERT INTO TalkRating VALUES (1, 1);
+
 
 INSERT INTO TalkAttendance VALUES (1, 1576836032, 1);
 INSERT INTO TalkAttendance VALUES (1, 1576836034, 1);
