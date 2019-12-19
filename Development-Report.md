@@ -208,7 +208,7 @@ RaspberryPi: Processes entrances and sends the information to the webserver.
 
 
 ### Logical architecture
-
+![UML Logical](logicalDiag.png)
 ### Physical architecture
 ![UML Physical](physical.png)
 ### Prototype
