@@ -1,3 +1,7 @@
+<?php 
+    $talk_id = $_GET['talk_id'];
+?>
+
 <div id="chart_area">
     <canvas width="500px" height="400px">
 <div>

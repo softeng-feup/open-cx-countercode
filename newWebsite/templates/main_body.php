@@ -1,5 +1,11 @@
+<?php include_once('database/connection.php'); ?>
+
+
+<?php
+    $talks = try_get_all_talks();
+?>
+
 <div class="card-body">
-    <h4 class="card-title">Speakers</h4>
     <div class="table-responsive">
     <table id="table">
         <thead>
@@ -11,74 +17,40 @@
             Subject
             </th>
             <th>
-            Status
+            Room
             </th>
             <th>
             Date
             </th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td class="py-1">
-            <img src="faces/nelson.jpg" class="mr-2" alt="image">
-            Nelson Gregório
-            </td>
-            <td>
-            Git - The basics
-            </td>
-            <td>
-            <label class="badge badge-gradient-success">FREE</label>
-            </td>
-            <td>
-            Dec 5, 2019
-            </td>
-        </tr>
-        <tr>
-            <td class="py-1">
-            <img src="faces/face2.jpg" class="mr-2" alt="image">
-            Stella Donelly
-            </td>
-            <td>
-            Polyrhythms and math
-            </td>
-            <td>
-            <label class="badge badge-gradient-warning">IN PROGRESS</label>
-            </td>
-            <td>
-            Dec 12, 2019
-            </td>
-        </tr>
-        <tr>
-            <td class="py-1">
-            <img src="faces/face3.jpg" class="mr-2" alt="image">
-            Marina Michel
-            </td>
-            <td>
-            Marine biology and JavaScript
-            </td>
-            <td>
-            <label class="badge badge-gradient-secondary">UNAVAILABLE</label>
-            </td>
-            <td>
-            Dec 16, 2019
-            </td>
-        </tr>
-        <tr>
-            <td class="py-1">
-            <img src="faces/face4.jpg" class="mr-2" alt="image">
-            John Doe
-            </td>
-            <td>
-            The perks of anonimity
-            </td>
-            <td>
-            <label class="badge badge-gradient-success">FREE</label>
-            </td>
-            <td>
-            Dec 3, 2019
-            </td>
-        </tr>
+        <?php
+        foreach ($talks as $talk) {
+            $talk_id = $talk['talkID']; 
+            $talk_info = try_get_talk_info_by_id($talk_id); 
+            ?>
+            
+            <tbody>
+            <form method="get" action="templates/talk_charts.php">
+                <tr>
+                    <input type="submit" id="talk_redirect" name="talk_id" value="<?php echo $talk_id ?>">
+                    <td class="py-1">
+                    <img src="faces/nelson.jpg" class="mr-2" alt="image">
+                    <?php echo $talk_info['name']; ?>
+                    </td>
+                    <td>
+                    <?php echo $talk_info['title']; ?>
+                    </td>
+                    <td>
+                        <?php echo $talk_info['roomID']; ?>
+                    </td>
+                    <td>
+                        <?php echo date('d-m-Y',$talk_info['date_start']); ?>
+                    </td>
+                    </input>
+                </tr>
+        <?php } ?>
+        </form>
         </tbody>
     </table>
     </div>

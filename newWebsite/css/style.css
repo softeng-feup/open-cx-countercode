@@ -170,10 +170,22 @@ color: white;
     margin: 1em 0;
 }
 
+#table {
+    margin: 10% 0;
+}
+
 #table img {
     height: 40px;
     width: 40px;
     border-radius: 20px;
+}
+
+#talk_redirect {
+    width: 100%;
+    color: transparent;
+    background-color: red;
+    border: none;
+    margin:0;
 }
 
 /* When the screen is less than 720px wide, stack the links and the search field vertically instead of horizontally */

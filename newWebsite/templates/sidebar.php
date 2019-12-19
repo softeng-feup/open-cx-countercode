@@ -14,13 +14,11 @@
         <div id="card_body">
             <h4 class="font-weight-normal mb-3">Weekly Visitors</h4>
             <h2 class="font-weight-normal mb-5">123456</h2>
-            <p class="card-text">Attendance: 93%</p>
         </div>
 
         <div id="card_body">
             <h4 class="font-weight-normal mb-3">Today's Visitors</h4>
             <h2 class="font-weight-normal mb-5">54678</h2>
-            <p class="card-text">Attendance: 78%</p>
         </div>
     </li>
     </ul>
