@@ -212,16 +212,17 @@ RaspberryPi: Processes entrances and sends the information to the webserver.
 ### Physical architecture
 ![UML Physical](physical.png)
 ### Prototype
+---
   Check the room attendance was the user story chosen to demonstrate in the prototype. Every person that enters or leaves the room, where the selected lecture is being held, will trigger the distance measuring sensors.
   The sequence which the sensors are activated will be processed by the RaspberryPi, running a python script.
   The RaspberryPi makes an HTTP request to add the newly collected data to the database in the server. 
   The website then displays the information by quering the database.
   Any user, speaker or organiser can, at any given time, check the website for this information.
----
+
 
 ## Implementation
-
 ---
+
 ## Test
 
 There are several ways of documenting testing activities, and quality assurance in general, being the most common: a strategy, a plan, test case specifications, and test checklists.
