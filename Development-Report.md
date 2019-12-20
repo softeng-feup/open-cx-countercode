@@ -16,17 +16,8 @@ You can find here detailed about the C.Alfred, hereby mentioned as module, from 
   * [Physical architecture](#Physical-architecture)
   * [Prototype](#Prototype)
 * [Implementation](#Implementation)
-* [Test](#Test)
 * [Configuration and change management](#Configuration-and-change-management)
 * [Project management](#Project-management)
-
-So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
-
-Please contact us! 
-
-Thank you!
-
-*team members names*
 
 ---
 
