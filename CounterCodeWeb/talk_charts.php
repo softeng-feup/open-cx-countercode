@@ -24,9 +24,11 @@
 		</div>
 		<?php if($talk_info['date_end'] < $now) {
 				?> 	<div id="rate_form">
-						<form id="form">
+						<form id="form" method="POST" action="actions/add_rating.php">
 							<label for="talk_rating"> Please rate this talk:
-								<input type="number" id="talk_rating" step="1" min="1" max="5">
+								<input type="hidden" name="talkID" value="<?php echo $talk_id; ?>">
+								<input type="number" name="rating" step="1" min="1" max="5">
+								<br><button type="submit" id="register-btn">Rate</button>
 							</label>
 						</form>
 					</div>
@@ -61,7 +63,7 @@
 		let people_count = [];
 		let people_counter = 0;
 		talk_attendance.forEach(point => {
-			people_counter += (point['is_entry'] == '1') ? 1 : -1;
+			people_counter += (point['is_entry'] == 'true') ? 1 : -1;
 			graph_data.push({x: point['timestamp'] - start_time, y: people_counter});
 		});
 
@@ -112,8 +114,9 @@
 
 		let graph_data = [];
 
-		for (let index = 0; index < 5; index++) {
-			graph_data.push(talk_ratings[index]['count_rat']);
+		for (let index = 0; index < talk_ratings.length; index++) {
+			console.log(talk_ratings[index][0]['count_rat']);
+			graph_data.push(talk_ratings[index][0]['count_rat']);
 		}
 
 

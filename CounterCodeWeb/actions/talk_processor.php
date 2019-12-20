@@ -9,13 +9,15 @@ $talk_info = try_get_talk_info_by_id($_POST['talk_id']);
 
 $talk_end = $talk_info['date_end'];
 
-$talk_avg_rat = NULL;
-$talk_ratings = NULL;
-if($talk_end - 600 >= time()) {
-	$talk_avg_rat = try_get_talk_avg_rating_by_id($_POST['talk_id']);
-	$talk_ratings = try_get_talk_rating_distribution_by_id($_POST['talk_id']);
-}
+$talk_avg_rat = try_get_talk_avg_rating_by_id($_POST['talk_id']);
 
+$talk_rating1 = try_get_talk_single_rating_by_id($_POST['talk_id'], 1);
+$talk_rating2 = try_get_talk_single_rating_by_id($_POST['talk_id'], 2);
+$talk_rating3 = try_get_talk_single_rating_by_id($_POST['talk_id'], 3);
+$talk_rating4 = try_get_talk_single_rating_by_id($_POST['talk_id'], 4);
+$talk_rating5 = try_get_talk_single_rating_by_id($_POST['talk_id'], 5);
+
+$talk_ratings = array($talk_rating1, $talk_rating2, $talk_rating3, $talk_rating4, $talk_rating5);
 
 if($talk_info !== NULL && $talk_attendance !== NULL) {
 	$success = true;

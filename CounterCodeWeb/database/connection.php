@@ -1,7 +1,7 @@
 <?php
 
 	$cwd = getcwd();
-	if(strpos($cwd, 'actions') !== false) {
+	if(strpos($cwd, 'actions') !== false || strpos($cwd, 'rest') !== false) {
 		$db = new PDO('sqlite:../database/cAlfred.db');
 	} else {
 		$db = new PDO('sqlite:database/cAlfred.db');

@@ -1,8 +1,11 @@
 <div class="topnav">
 
     <form action="search_results.php" method="GET">
-        <button type="button" id="account-button" onclick="location.href='admin_login.php'">Admin Page</button>
-	    <input type="text" placeholder="Search a talk..." name="search_talk">
+        <?php if(!isset($_SESSION['email'])) { ?>
+            <button type="button" id="account-button" onclick="location.href='admin_login.php'">Admin Login</button>
+        <?php } else { ?>
+            <button type="button" id="account-button" onclick="location.href='actions/logout.php'">Logout</button>
+        <?php } ?>
     </form>
 
 </div>

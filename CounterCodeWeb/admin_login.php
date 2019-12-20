@@ -3,14 +3,14 @@
 	<div class="background" id="homebackground">
         <?php include_once('templates/navbar.php'); ?>
         <div id="login_container">
-            <form id="login_form" action="login.php">
+            <form id="login_form" action="actions/login.php" method="post">
                 <label for="username">Email<br>
-                    <input type="email" id="email">
+                    <input type="email" name="email">
                 </label>
                 <label for="password"><br>Password<br>
-                    <input type="password" id="password" minlength="8" maxlength="128">
+                    <input type="password" name="password" minlength="8" maxlength="128">
                 </label>
-                <br><input type="submit" id="login_btn" value="Login">
+                <br><input type="submit" name="login_btn" value="Login">
             </div>
         </div>
 	</div>
