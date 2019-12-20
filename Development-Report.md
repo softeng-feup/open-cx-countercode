@@ -34,7 +34,7 @@ Thank you!
 
 An important piece of data for a conference is knowing the attendance and time spent in any given talk.
 This information benefits everyone involved, be it organizers, speakers or attendees through data collection.
-Using two motion sensors on each door, lecture attendance data can be collected with acceptable precision. For each person that walks through the door, the motion sensors can determine wether they are entering or leaving the room giving us a rough estimate of how many people are in the room at each given time.
+Using two motion sensors on each door, lecture attendance data can be collected with acceptable precision. For each person that walks through the door, the motion sensors can determine wether they are entering or leaving the room giving us a rough estimate of how many people are in the room at each given time. This way, all the conference atendees can see how full is the lecture they are interested in before they decide if it's worthy to go. 
 
 
 ---
