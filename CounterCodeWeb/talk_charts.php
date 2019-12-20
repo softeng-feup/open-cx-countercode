@@ -13,27 +13,27 @@
 		<?php include_once('templates/navbar.php'); ?>
 		<?php include_once('templates/sidebar.php'); ?>
 		<div id="talk_info">
-			<h2> <?php echo $talk_info['title']," by ",$talk_info['name'] ?> </h2>
+        <h2 id="title"> <?php echo $talk_info['title']," by ",$talk_info['name'] ?> </h2>
 			<div id="graph">
 				<canvas id="line-chart" width="800" height="400"></canvas>
 			</div>
 
+            <?php if($talk_info['date_end'] < $now) {
+                    ?> 	<div id="rate_form">
+                            <form id="form" method="POST" action="actions/add_rating.php">
+                                <label for="talk_rating"> Please rate this talk:
+                                    <input type="hidden" name="talkID" value="<?php echo $talk_id; ?>">
+                                    <input type="number" name="rating" step="1" min="1" max="5">
+                                    <br><button type="submit" id="register-btn">Rate</button>
+                                </label>
+                            </form>
+                        </div>
+            <?php } ?>
 			<div id="graph">
 				<canvas id="satisfaction-chart" width="800" height="400"></canvas>
 			</div>
-		</div>
-		<?php if($talk_info['date_end'] < $now) {
-				?> 	<div id="rate_form">
-						<form id="form" method="POST" action="actions/add_rating.php">
-							<label for="talk_rating"> Please rate this talk:
-								<input type="hidden" name="talkID" value="<?php echo $talk_id; ?>">
-								<input type="number" name="rating" step="1" min="1" max="5">
-								<br><button type="submit" id="register-btn">Rate</button>
-							</label>
-						</form>
-					</div>
-		<?php } ?>
-	</div>
+        </div>
+    </div>
 
 <?php include_once('templates/footer.php'); ?>
 

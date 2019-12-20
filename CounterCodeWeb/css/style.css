@@ -169,6 +169,12 @@ color: white;
     margin: 1em 0;
 }
 
+table, tr {
+    padding: 1em;
+    border: 1px solid #3e508aa0;
+    border-radius: 5px;
+}
+
 #table {
     margin: 10% 0;
 }
@@ -184,19 +190,27 @@ color: white;
     float: left;
 }
 
-#table td {
+#table td, #table th{
     text-align: center;
-    margin: 1em 5em;
+    margin: 1em 10em;
 }
 
 
 #talk_redirect {
+    position: relative;
+    top:15px;
     width: 100%;
     color: transparent;
-    background-color: #4CAF50;
+    background-color: #ffffff01;
     border: none;
     margin:0;
     padding: 1em;
+    z-index:99;
+}
+
+#arrow {
+    position: relative;
+    top:-10px;
 }
 
 #talk_info {
@@ -221,6 +235,17 @@ color: white;
 #account-button:hover {
     background-color: #3e508a;
     color: white;
+}
+
+
+#title {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#rate_form {
+    width: 60%;
+    margin: 0 20%;
 }
 
 /* When the screen is less than 720px wide, stack the links and the search field vertically instead of horizontally */
