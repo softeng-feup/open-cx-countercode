@@ -64,20 +64,16 @@ Actor: User, Speaker and Organizer
 
 Description: Providing information relative to the number of people that are attending or attended a lecture.
 
-Preconditions and Postconditions: Carry a portable device with access to the Internet.
+Preconditions and Postconditions: Search for the lecture you are interested in the website.
 
 Normal Flow: 	
-  1. Access the website.
-  2. Search for the lecture you are interested in.
-  3. Check the room attendance
-  4. Head to the room displayed on the website.
-  5. Find yourself a seat and enjoy the lecture.
+  1. Check the room attendance
+  2. Head to the room displayed on the website.
+  3. Find yourself a seat and enjoy the lecture.
 
 Alternative Flows and Exceptions:
-  1. Access the website.
-  2. Search for the lecture you are interested in.
-  3. Check the room attendance.
-  4. If the room is full, search for another lecture that isn’t.
+  1. Check the room attendance.
+  2. If the room is full, search for another lecture that isn’t.
   
  
 **Get previous conference or speaker analytics**
@@ -86,12 +82,10 @@ Actor: User and Organizer
 
 Description: Providing information relative to a conference or speaker.
 
-Preconditions and Postconditions: Carry a portable device with access to the Internet.
+Preconditions and Postconditions: Search for the speaker or the conference you are interested in the website.
 
 Normal Flow: 	
-  1. Access the website.
-  2. Search for the speaker and conference you are interested in.
-  3. Check the feedback.
+  1. Check the feedback.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -102,12 +96,10 @@ Actor: Speaker
 
 Description: Providing feedback relative to a talk held by the speaker.
 
-Preconditions and Postconditions: Carry a portable device with access to the Internet.
+Preconditions and Postconditions: Search for the lecture you are interested in the website.
 
-Normal Flow: 	
-  1. Access the website.
-  2. Search for the lectures in which you will talk.
-  3. Check the feedback.
+Normal Flow:
+  1. Check the feedback.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -118,19 +110,15 @@ Actor: Organizer
 
 Description: Providing information relative to the number of people that are attending or attended a lecture and their feedback.
 
-Preconditions and Postconditions: In order to check the room attendance, the lecture must started or ended. The overall feedback is only available after people posted their opinion. Also the organizer needs to be able to access the internet.
+Preconditions and Postconditions: In order to check the room attendance, the lecture must started or ended. The overall feedback is only available after people posted their opinion. Then the organizer needs to search for the lecture in the website.
 
 Normal Flow: 	
-  1. Access the website.
-  2. Search for the lecture you are interested in.
-  3. Check the room attendance.
-  4. Check the attendees feedback regarding the conference.
+  1. Check the room attendance.
+  2. Check the attendees feedback regarding the conference.
 
 Alternative Flows and Exceptions:
-  1. Access the website.
-  2. Search for the lecture you are interested in.
-  3. Check the attendees feedback regarding the conference.
-  4. Check the room attendance.
+  1. Check the attendees feedback regarding the conference.
+  2. Check the room attendance.
   
 
 **Check lecture location**
@@ -139,12 +127,10 @@ Actor: User and Speaker
 
 Description: Providing information relative to where the lecture will take place.
 
-Preconditions and Postconditions: Carry a portable device with access to the Internet.
+Preconditions and Postconditions: Search for the lecture you are interested in the website.
 
 Normal Flow: 	
-  1. Access the website.
-  2. Search for the lecture you are interested in.
-  3. Check the room where the lecture is being held.
+  1. Check the room where the lecture is being held.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -155,12 +141,10 @@ Actor: Speaker
 
 Description: Providing feedback relative to the preparation thelectures itself the Speaker participated in.
 
-Preconditions and Postconditions: The lectures must have ended already and the Speaker needs to be able to access the Internet.
+Preconditions and Postconditions: The lectures must have ended already and the Speaker needs to be able to access the Internet and search for the lecture in the website.
 
 Normal Flow: 	
-  1. Access the website.
-  2. Search for the lecture you participated in.
-  3. Write your opinion regarding the lecture and its preparation.
+  1. Write your opinion regarding the lecture and its preparation.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -170,12 +154,10 @@ Alternative Flows and Exceptions: There are none.
 Actor: Organizer
 
 Description: Give a “rating” to each speaker based on his reviews on other conferences.
-Preconditions and Postconditions: The Speaker must have had at least one talk in other conference and must have at least one review.
+Preconditions and Postconditions: The Speaker must have had at least one talk in other conference and must have at least one review. Also he needs to access the website and search for the speaker in question.
 
 Normal Flow: 	
-  1. Access the website.
-  2. Search for the speaker you are interested in.
-  3. Check its popularity.
+  1. Check its popularity.
 
 Alternative Flows and Exceptions: There are none.
 
@@ -206,7 +188,6 @@ RaspberryPi: Processes entrances and sends the information to the webserver.
    With all this data available in the website, every atendee, speaker or organizer can check it with their phone.
 
 
-
 ### Logical architecture
 ![UML Logical](logicalDiag.png)
 ### Physical architecture
@@ -222,24 +203,15 @@ RaspberryPi: Processes entrances and sends the information to the webserver.
 
 ## Implementation
 ---
+  The two distance measuring sensors capture data at the door. A python script, running in the RaspberryPi, is pooling data from those sensors. The state of the sensors is processed by a logical state macine to determine if a person is entering or leaving the room. Afterwards, a request is made to insert that piece of data into the database, to be displayed in the website.
 
-## Test
 
-There are several ways of documenting testing activities, and quality assurance in general, being the most common: a strategy, a plan, test case specifications, and test checklists.
 
-In this section it is only expected to include the following:
-* test plan describing the list of features to be tested and the testing methods and tools;
-* test case specifications to verify the functionalities, using unit tests and acceptance tests.
- 
-A good practice is to simplify this, avoiding repetitions, and automating the testing actions as much as possible.
-
----
 ## Configuration and change management
 
-Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
-
-For the purpose of ESOF, we will use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
-
+   The python script responsible for counting the entries and exits of an existing room was developed in the master branch from the beginning. At this stage, the data was being inserted locally into the database. At certain point, it was also included a first version of the website.
+   Then, a branch was created to focus on the conclusion of the website. Diferente logins (organizer and speaker), attendance and rating charts and the possibility to add speakers and talks were added. The database was stored with the website and a REST API was made so the python script could make HTTP requests to read and insert data.
+   The branch was merged and a few small fixes were made before the project delivery.
 
 ---
 
