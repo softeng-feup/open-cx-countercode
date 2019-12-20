@@ -20,7 +20,7 @@
 
             <?php if($talk_info['date_end'] < $now) {
                     ?> 	<div id="rate_form">
-                            <form id="form" method="POST" action="actions/add_rating.php">
+                            <form id="rating_form" method="POST" action="actions/add_rating.php">
                                 <label for="talk_rating"> Please rate this talk:
                                     <input type="hidden" name="talkID" value="<?php echo $talk_id; ?>">
                                     <input type="number" name="rating" step="1" min="1" max="5">

@@ -84,7 +84,6 @@ color: white;
     background:#f9f9f9;
     border-radius: 10px;
     border: 3px solid #3e508a;
-    height: 6em;
 }
 
 #form h1 {
@@ -99,8 +98,9 @@ color: white;
 }
 
 #form input{
-    padding: 0em 1.25em;
-    margin: 0 0 0 2em;
+    float: right;
+    padding: 0em 2em;
+    margin: 0 4em 0 0;
     border-radius: 5px;
 }
 
@@ -110,6 +110,41 @@ color: white;
     margin: 2em 37.5%;
     border-radius: 5px;
 }
+
+#rating_form{
+    margin: 5% 5%; 
+    width:30em;
+    padding:2em;
+    background:#f9f9f9;
+    border-radius: 10px;
+    border: 3px solid #3e508a;
+    height: 6em;
+}
+
+#rating_form h1 {
+    font-weight: bold;
+    color: #3e508a;
+    text-align: center;
+}
+
+#rating_form label{
+    margin: 0em 5em 0em 1em;
+    list-style-type: none;
+}
+
+#rating_form input{
+    padding: 0em 1.25em;
+    margin: 0 0 0 2em;
+    border-radius: 5px;
+}
+
+#rating_form button{
+    padding: 0.25em 1.25em;
+    width: 15%;
+    margin: 2em 37.5%;
+    border-radius: 5px;
+}
+
 
 #sidebar {
     position: absolute;
