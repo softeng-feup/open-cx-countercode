@@ -3,10 +3,12 @@
 
     if(!isset($_SESSION['email']) || !isset($_SESSION['admin'])) {
         header('Location: admin_login.php');
+        return;
     }
-
+    
     if($_SESSION['admin'] == false) {
         header('Location: speaker_page.php');
+        return;
     }
 ?>
 

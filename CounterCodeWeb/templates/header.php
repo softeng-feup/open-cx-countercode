@@ -2,8 +2,8 @@
 	//session_set_cookie_params(0, '/', '', false, true);
 	session_start();
 
-	echo $_SESSION['email'];
-	echo $_SESSION['admin'];
+	// echo $_SESSION['email'];
+	// echo $_SESSION['admin'];
 ?>
 
 <!DOCTYPE html>
