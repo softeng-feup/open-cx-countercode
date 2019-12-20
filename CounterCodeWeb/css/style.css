@@ -83,8 +83,8 @@ color: white;
     padding:2em;
     background:#f9f9f9;
     border-radius: 10px;
-    border: none;
-    box-shadow: 5px 5px 5px 0px #00000030;
+    border: 3px solid #3e508a;
+    height: 6em;
 }
 
 #form h1 {
@@ -100,13 +100,14 @@ color: white;
 
 #form input{
     padding: 0em 1.25em;
-    margin: 0 0 0 4em;
+    margin: 0 0 0 2em;
     border-radius: 5px;
 }
 
-#form input[type=submit]{
+#form button{
     padding: 0.25em 1.25em;
-    margin: 0.75em 0em 0em 2em;
+    width: 15%;
+    margin: 2em 37.5%;
     border-radius: 5px;
 }
 
